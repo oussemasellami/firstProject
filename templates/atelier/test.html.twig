@@ -1,0 +1,39 @@
+<p>bonjour 3A52</p>
+
+<hr>
+<p>{{bonjour}}</p>
+<table border="2">
+	<tr>
+		<td>ref</td>
+		<td>Title</td>
+		<td>Description</td>
+		<td>
+			date_debut</td>
+		<td>
+			date_fin</td>
+		<td>
+			nb_part</td>
+		<td>Action</td>
+	</tr>
+
+	<tr>
+		{% for t in table  %}
+
+			<td>{{t.ref}}</td>
+			<td>{{t.Titre}}</td>
+			<td>{{t.Description | upper}}</td>
+			<td>{{t.date_debut}}</td>
+			<td>{{t.date_fin}}</td>
+			<td>{{t.nb_participants}}</td>
+			<td>
+				{% if t.nb_participants ==19 %}
+					<a href=" {{path('app_atelier')}}">Participer</a>
+				{% else %}
+
+					error
+				{% endif %}
+			</td>
+		</tr>
+
+	{% endfor %}
+</table>

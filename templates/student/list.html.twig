@@ -1,0 +1,40 @@
+<html>
+<body>
+{{cat}}
+{{salle}}
+<center><h2>Notre table</h2></center>
+<table border="2">
+<tr>
+<td>ref</td>
+<td>titre</td>
+<td>Description</td>
+<td>date_debut</td>
+<td>date_fin</td>
+<td>nb_participants</td>
+<td>Action</td>
+</tr>
+{% for f in formation %}
+    {# {% if f.Description =="formation pratique" %}--> #}
+<tr>
+<td>{{f.ref }}</td>
+<td>{{f.Titre}}</td>
+<td>{{f.Description }}</td>
+<td>{{f.date_debut}}</td>
+<td>{{f.date_fin}}</td>
+<td>{{f.nb_participants}}</td>
+<td>
+{% if f.nb_participants ==19 %}
+<a href=" {{path('app_student')}}">Participer</a>
+{% else %}
+
+error
+{% endif %}
+</td>
+</tr>
+{# hhhhhhhhhhhhhhhhhhhh <!--{% else %}
+<p>non trouve</p>
+{% endif%}-->#}
+{% endfor %}
+</table>
+</body>
+</html>

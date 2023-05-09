@@ -1,0 +1,42 @@
+
+
+
+<p>bonjour 3a53</p>
+
+
+
+<table border="2">
+<tr>
+<td>ref</td>
+<td>titre</td>
+<td>descrip</td>
+<td>date fin</td>
+<td>date debut</td>
+<td>nb-part</td>
+<td>Action</td>
+</tr>
+<tr>
+{% for f in testTwig %}
+
+{#{% if f.Description =="formation pratique" %}#}
+
+<td>{{ f.ref}}</td>
+<td>{{f.Titre}}</td>
+<td>{{f.Description | upper}}</td>
+<td>{{f.date_fin}}</td>
+<td>{{f.date_debut}}</td>
+<td>{{f.nb_participants}}</td>
+<td>
+{% if f.nb_participants ==19 %}
+<a href=" {{path('app_club3_a53')}}">Participer</a>
+{% else %}
+
+error
+{% endif %}
+</td>
+</tr>
+{#{% endif%}#}
+{% endfor %}
+
+
+</table>
